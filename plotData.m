@@ -20,7 +20,7 @@ value = i;
 for i = 1:(width(dataset)-1)
     j = value + i;
     subplot(2, 7, j);
-    boxchart([dataset{:, i}])
+    boxplot([dataset{:, i}])
     title(dataset.Properties.VariableNames{i});
     ylabel(dataset.Properties.VariableNames{i});
 end
