@@ -1,10 +1,13 @@
 
+global data
 data = importdata('Rice_Cammeo_Osmancik.arff'); % returns a column vector
 
 %Turn the unstructured data into sctructured data
 data = handleData(data);
-cammeoData= data(data.Class == "Cammeo", :);
-osmancikData= data(data.Class == "Osmancik", :);
+global cammeoData 
+cammeoData = data(data.Class == "Cammeo", :);
+global osmancikData
+osmancikData = data(data.Class == "Osmancik", :);
 
 % do a statistical summary on the data fed
 summary = summarize(data);
@@ -27,6 +30,7 @@ plotData(cammeoData, 'Cammeo data')
 plotData(osmancikData, 'Osmancik data')
 
 %correlation data analysis
+global correlations
 correlations = array2table(zeros(2, 5), "VariableNames", ...
         [ 
             "Perimeter/Area", "Major Axis Length/Minor Axis Length", "Area/Convex Area", ...
@@ -77,7 +81,9 @@ for i = 1:5
 end
 
 hold off
-
+hold off
+figure('Name', "Colored Correlation Measures")
+corrplot()
 %write table only allows for 1 table to be written
 writetable(data, "./ResultingData/Rice_Data.xlsx")
 writetable(summary, "./ResultingData/Rice_Data_Summary.xlsx")
@@ -86,3 +92,4 @@ writetable(cammeoSummary, "./ResultingData/Cammeo_Data_Summary.xlsx")
 writetable(osmancikData, "./ResultingData/Osmancik_Data.xlsx")
 writetable(osmancikSummary, "./ResultingData/Osmancik_Data_Summary.xlsx")
 writetable(correlations, "./ResultingData/Data_Correlation.xlsx")
+

@@ -14,7 +14,7 @@ When the code is ran, 4 additional windows will be opened. These windows are gra
 
 ## Other
 
-The `ResultingData` folder consists of excel files that has all the resulting data from the script. All the excel files have a self-explanatory title that explains its content.
+The `ResultingData` folder consists of excel files that has all the resulting data from the script. All the excel files have a self-explanatory title that explains its content. IF YOU READ THE EXCELS matlab doesnt record the row variable names into the excel sheet, look at the code if you require more context to the values of the rows.
 
 The `Graphs` folder contains the graphical component of the data. Much like `ResultingData`, each file in the folder has a self-explanatory title that explains its content. Each file is a Matlab .fig file. To view the graphs, make sure you have Matlab in your system, and simply click on the one you want to look at.
 
